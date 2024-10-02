@@ -48,7 +48,8 @@ header.cabecera-sitio:hover{
     padding: .5em;
     text-transform: uppercase;
     font-family: Inter;
-    font-size: 1em;
+    font-size: 0.9em;
+    font-weight: 600;
 
 }
 

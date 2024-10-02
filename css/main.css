@@ -42,12 +42,13 @@ body{
 .slider-banner{
     position: absolute;
     top: 50%;
-    left: 6%;
+    /* left: 6%; */
     transform: translate(0%,-50%);
 }
 .contenido-banner{
     width: 90%;
     max-width: 900px;
+    padding-left: 5% !important;
 }
 .titulo-banner{
     color: #FFF;
@@ -97,6 +98,7 @@ body{
 }
 .slick-dots li {
     margin-right: 15px;
+    margin-bottom: 15px;
 }
 .slick-dots li button {
     background: none;
@@ -125,6 +127,11 @@ body{
     line-height: 35px;
 }
 .contenido-home h2 strong{
+    color: #ffffff !important;
+    font-weight: 500;
+}
+.contenido-nosotros p strong,
+.contenido-nosotros p{
     color: #ffffff !important;
     font-weight: 500;
 }
@@ -209,20 +216,24 @@ footer{
         padding: 50px 0;
     }
 }
-.rectangular .slick-dots{
+.rectangular .slick-dots,
+.slider-galeria .slick-dots{
     bottom: unset;
     left: unset;
     transform: unset;
     position: relative;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
-.rectangular .slick-dots li button {
+.rectangular .slick-dots li button,
+.slider-galeria .slick-dots li button {
     background:#D1D1D1;
     border-radius: 0%;
     width: 50px;
     border: none;
 }
-.rectangular .slick-dots li.slick-active button {
+.rectangular .slick-dots li.slick-active button,
+.slider-galeria .slick-dots li.slick-active button {
     background: var(--primary-color);
 }
 footer p{
@@ -239,7 +250,7 @@ footer .redes a:not(:last-child){
     position: absolute;
     top: 50%;
     left: 7%;
-    font-size: 4em;
+    font-size: 3em;
 }
 #banner-interior {
     position: relative;
@@ -250,7 +261,8 @@ footer .redes a:not(:last-child){
     background-repeat: no-repeat !important;
 }
 .contenedor-cuadro-servicio {
-    width: 180px;
+    position: relative;
+    width: 150px;
     max-width: 100%;
     padding: 10px;
     background:var(--primary-color);
@@ -285,6 +297,19 @@ footer .redes a:not(:last-child){
 .contenedor-cuadro-servicio:hover,
 .contenedor-cuadro-servicio.active {
     background:#95333c;
+}
+.contenedor-cuadro-servicio.active::after {
+    transform: translate(-50%, 0);
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    width: 30px;
+    height: 15px;
+    background-image: url(../img/crevron.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 /* Estilos para el botón */
 .btn-cotiza {
@@ -345,13 +370,95 @@ a.grid__item{
     background: #717171 ;
     min-height: 200px;
  }
+ .contenedor-persona{
+    background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Esto alinea el contenido (la imagen) al fondo del div */
+        height: 100%; /* Ajusta el tamaño según sea necesario */
+        transition: background 0.3s ease;
+ }
+ .contenedor-persona:hover,
+ .contenedor-persona.active{
+    background: #cf3646;
+ }
+ .contenedor-persona:hover img.fade{
+    opacity: 1;
+ }
+ .contenedor-persona img.fade{
+    opacity: 0.5;
+ }
+ .contenedor-ejecutivos{
+    background: #393939;
+ }
+ .contenedor-sucursal {
+    max-width: 100%;
+    padding: 15px;   
+    background: #cf3744;
+    transition: all 0.3s ease;
+    min-height:50px;
+    p{
+        color: #ffffff !important;
+        font-size: 0.85em;
+        line-height: 15px;
+        text-align: left;
+    }
+}
+a.sucursales{
+    opacity: 0.6;
+    .info-sucursal p{
+        color: #ffffff;
+        text-align: left;
+        padding-left: 15px;
+    }
+}
+a.sucursales:hover,
+a.sucursales.active{
+    opacity: 1;
+}
+input.submit{
+    letter-spacing: 3px;
+    background: #CF3744;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+input.submit:hover{
+    background: #8c3f46;
+}
 @media (max-width: 768px) {
+    .contenido-home h2{
+        font-size: 1.1em;
+    }
+    .rectangular .slick-dots li button {
+        width: 25px;
+    }
+    .titulo-banner{
+        font-size: 2em;
+    }
+    .subtitulo-banner{
+        font-size: 1em;
+    }
   .btn-cotiza {
     font-size: 14px;
   }
+  .titulo-banner-interior {
+    font-size: 2em;
+}
 }
 
 @media (max-width: 480px) {
+    .cuadro-indicador{
+        padding: 20% 10%;
+    }
+    .cuadro-indicador p, .cuadro-indicador span {
+        line-height: 15px;
+    }
   .btn-cotiza {
     font-size: 12px;
   }
@@ -366,5 +473,21 @@ a.grid__item{
     }
     .grid__description {
     grid-area: desc;
-    }               
+    } 
+    .grid.directorio {
+        display: grid;
+        grid-template-areas:
+        "item item item item item"
+        "desc desc desc desc desc";
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        }   
+        .grid.ejecutivos {
+            display: grid;
+            grid-template-areas:
+            "item item item item"
+            "desc desc desc desc";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+            }                 
 }
