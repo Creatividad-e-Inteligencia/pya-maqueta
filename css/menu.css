@@ -12,8 +12,11 @@ header.cabecera-sitio:hover{
 }
 .wrapper {
     padding: 0 1em;
-    max-width: 85%;
+    max-width: 90%;
     margin: 0 auto;
+}
+header.cabecera-sitio .logo a img{
+    max-width: 150px;
 }
 .cabecera-sitio .menus {
     padding: 1em 0
@@ -50,7 +53,7 @@ header.cabecera-sitio:hover{
     font-family: Inter;
     font-size: 0.9em;
     font-weight: 600;
-
+    transition: all 0.3s ease;
 }
 
 .cabecera-sitio .menu-top .icon {
@@ -118,6 +121,17 @@ ul.sub-menu li a {
     width: 0.45em;
     top: -1px;
     transform: rotate(135deg);
+}
+@media(max-width: 1366px) {
+    .cabecera-sitio .menu li {
+        padding: 0 !important;
+        a{
+            font-size: 0.8em;
+        }
+    }
+    header.cabecera-sitio .logo a img {
+        max-width: 110px;
+    }
 }
 @media(max-width: 768px) {
 

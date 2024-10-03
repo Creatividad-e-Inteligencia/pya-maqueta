@@ -132,6 +132,11 @@ $(function() {
         ]
       });
 
+      $(".tiempo").click(function(e) {
+        e.preventDefault();
+        $(".tiempo").removeClass('active'); // Remueve la clase de todos los enlaces
+        $(this).addClass('active'); // Añade la clase al enlace clicado
+    });
       function igualarAltura(clase) {
                var alturas = 0;
 
@@ -171,3 +176,7 @@ $(function() {
 
   }
 );
+function toggleSearch() {
+  const searchWrapper = document.querySelector('.search-input-wrapper');
+  searchWrapper.style.display = searchWrapper.style.display === 'block' ? 'none' : 'block';
+}

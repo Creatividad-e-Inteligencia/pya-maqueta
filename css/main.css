@@ -368,7 +368,13 @@ a.grid__item{
  }
  .cuadro-gris{
     background: #717171 ;
-    min-height: 200px;
+    min-height: 150px;
+ }
+ .cuadro-gris hr{
+    background: #8d8d8d;
+    width: 60px;
+    height: 1px;
+    margin: 0.5rem 0
  }
  .contenedor-persona{
     background: #ffffff;
@@ -430,6 +436,122 @@ input.submit{
 }
 input.submit:hover{
     background: #8c3f46;
+}
+.clic{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    color: #ffffff;
+}
+.linea-tiempo{
+    display: none;
+}
+a.tiempo.active .clic,
+a.tiempo.active .img-linea{
+    display: none;
+}
+a.tiempo.active ~ .linea-tiempo{
+    display: block;
+} 
+.grid.proyectos .grid__item{
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+.grid.proyectos .grid__item.active,
+.grid.proyectos .grid__item:hover{
+    opacity: 1;
+}
+.language-toggle {
+    display: inline-flex;
+    border: 2px solid #fff; /* Borde externo */
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.language-btn {
+    padding: 3px 7px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.language-btn.active {
+    background-color: #fff; /* Fondo blanco para el botón activo */
+    color: #000; /* Color del texto del botón activo */
+}
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px; /* Ajusta el tamaño del icono según tu diseño */
+}
+
+.search-input-wrapper {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    display: none; /* Oculto por defecto */
+    z-index: 2;
+}
+
+.search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px; /* Ajusta el ancho del input */
+    outline: none;
+}
+        .form-wrap{
+            border: 1px solid #979696;
+    border-radius: 5px;
+        }
+        .nv-nav-search {
+    display: flex;
+    align-items: center;
+    right: auto;
+    left: 0;
+    top: 100%;
+        background-color:#ffffff;
+        opacity: 1;
+    visibility: visible;
+    padding: 10px;
+}
+.search-form {
+    display: flex;
+    max-width: 100%;
+    line-height: 1;
+}
+.search-field {
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+}
+input.search-field:focus-visible {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+.search-form .search-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 45px;
+    z-index: 1;
+    border-radius: 5px;
+    border: 0;
+    position: relative;
 }
 @media (max-width: 768px) {
     .contenido-home h2{
